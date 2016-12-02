@@ -1,1 +1,3 @@
-# LGLivingGreen.github.io
+# LGLivingGreen
+
+Gardening and home services in the Canberra region.
