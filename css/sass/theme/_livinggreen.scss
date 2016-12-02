@@ -1,0 +1,448 @@
+$theme: 'livinggreen';
+
+$color_map: (
+    primary-dark:   #262626, 
+    primary-light:  #ffffff, 
+    accent-dark:    #70840b, 
+    accent-mid:     #c5de47, 
+    accent-light:   #ebebeb, 
+    subtle-dark:    #262626,
+    subtle-light:   #ddd, 
+    darkest:        #000, 
+    lightest:       #fff
+);
+
+
+// Fonts
+@import 'https://fonts.googleapis.com/css?family=Raleway:400,400i,500,700|Rock+Salt';
+
+%font_rocksalt {
+    font-family: 'Rock Salt', sans-serif;
+}
+
+%font_raleway {
+   	font-family: 'Raleway', sans-serif;
+}
+
+%heading_normal {
+    @extend %font_rocksalt;
+	font-weight: 400;
+    strong {
+        font-weight: 700;   
+    }
+}
+
+%heading_strong {
+    @extend %font_rocksalt;
+    font-weight: 700;
+}
+
+%body_normal {
+	@extend %font_raleway;
+    font-weight: 400;
+    strong {
+        font-weight: 700;
+    }
+}
+
+%body_mid {
+	@extend %font_raleway;
+    font-weight: 500;
+    strong {
+        font-weight: 700;
+    }
+}
+
+%body_strong {
+    @extend %font_raleway;
+    font-weight: 700;
+}
+
+
+// Set something to be a theme colour
+// Usage example: @include theme-color('background-color', 'primary-light');
+@mixin theme-color($place, $color) {
+    #{$place}: map-get($color_map, $color)
+}
+
+
+$small-padding: 2.5rem;
+
+/****** Page-wide settings ******/
+body {
+    
+    @include theme-color('background-color', 'primary-light');   
+    @include theme-color('color', 'primary-dark');
+
+    // Text
+    a {
+        @include theme-color('color', 'accent-mid'); 
+        &:hover, &:focus {
+            @include theme-color('color', 'darkest'); 
+        }
+    }
+    
+    // Definition lists
+    dl {
+        padding: 1em 0;
+        dt {
+            @extend %body_strong;
+            font-size: 1em;
+            margin-top: 0.4em;
+        }
+        dd {
+            font-size: 1em;
+            padding-bottom: 0.4em;
+        }
+    }
+    
+    // Icons
+    .icon-phone {
+        &:before {
+            content: "\f095";
+            font-family: FontAwesome;
+        }
+    }
+    .icon-email {
+        &:before {
+            content: "\f003";
+            font-family: FontAwesome;
+        }
+    }
+    
+    // Columns
+    .column {
+        width: 50%;
+        float: left;
+        display: inline-block;
+    }
+    
+    // Containers
+    .container {
+        @include breakpoint("small") {   
+            padding: 0 $small-padding;
+        }
+    }
+    
+}
+
+
+
+
+
+/****** Section settings ******/
+
+// Top right block
+#topright {
+    text-align: left;
+    position: static;
+    white-space: nowrap;
+    @include theme-color('color', 'lightest');
+    ul {
+        min-width: 15em;
+        font-size: 0.9em;
+        background-color: #292a26;
+        opacity: 0.9;
+        padding: 0.5em 1.2em;
+        list-style-type: none;
+        width: auto;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        li { 
+            a {
+                @extend %body_normal;
+                color: #fff;
+                text-decoration: none;
+                &:hover, &:focus {
+                    @include theme-color('color', 'accent-mid');
+                    text-decoration: underline;
+                }
+            }
+            &:before {
+                @include theme-color('color', 'lightest');   
+                float: left;
+                padding-right: 0.9em;
+                width: 1em;
+                text-align: center;
+                display: inline-block;
+            }
+            line-height: 2em;
+        }
+    }
+    @include breakpoint("x-small") {
+        &.container {
+            padding: 0;   
+            margin: 0;
+            max-width: none;
+        }
+        ul {
+            position: relative; 
+            text-align: left;
+            li {
+                text-align: left;
+                margin: 0 auto;
+                &:before {
+                    display: none;  
+                }
+            }
+            @include breakpoint("small") {
+                padding: 1em $small-padding;
+            }
+        }
+    }
+    
+}
+
+
+// Primary header
+#primary-header .container {
+    padding: 0;
+}
+
+// Banner (outside the container)
+#banner {
+    background-image: url('../images/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include breakpoint("x-small") {
+        padding: 4em 0;
+    }
+}
+
+
+// Large header block
+#large-header {
+    text-align: center;
+    padding: 0;
+    header {
+        background: rgba(white, 0.8);
+        @include theme-color('color', 'darkest');
+        display: inline-block;
+        width: 15em;
+        height: 15em;
+        border-radius: 100%;
+        margin: 6em 0 3em;
+        padding: 1em;
+        h1 {
+            @extend %heading_normal;
+            font-size: 1.6em;
+            margin-bottom: 0.4em;
+            span {
+                @extend %body_strong;
+                font-size: 0.7em;
+                display: block;
+                margin: 2.2em 3em 0.5em;
+                border-bottom: 0.2em solid;
+                @include theme-color('border-color', 'accent-mid'); 
+                line-height: 1.4em;
+            }
+        }
+        p {
+            line-height: 1.4em; 
+            @extend %body_mid;
+        }
+        @include breakpoint("x-small") {
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            margin: 0 0 0 0;
+            text-align: left;
+            h1 {
+                line-height: 1em;
+                margin: 0.5em 0;
+                span {
+                    margin: 1em 0 0.5em;
+                    max-width: none;
+                    display: inline-block;
+                    border: 0;
+                }
+            }
+            padding: 1em $small-padding 2em;
+        }
+    }
+}
+
+
+// Services section (grey)
+#services {
+    @include theme-color('background-color', 'accent-light');
+     dt:before {
+        @include theme-color('color', 'subtle-dark');   
+    }
+    #gardening, #cleaning {
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: 5.3em;
+        padding-left: 6.5em;
+        dt {
+            font-size: 1.1em;
+            line-height: 1.8em;
+        }
+        dd {
+            font-size: 0.9em;   
+        }
+    }
+    #gardening {
+        background-image: url(../images/watering-can.svg);
+    }
+    #cleaning {
+        background-image: url(../images/cleaning-brush.svg);
+    }
+    dl div {
+        margin-bottom: 1em;
+        &:last-child {
+            margin-bottom: 0.5em;   
+        }
+    }
+    @include breakpoint("small") {
+        #gardening, #cleaning {
+            background-size: 3em;
+            padding-left: 4em;
+            background-position: top left;
+        }
+    }
+    @include breakpoint("x-small") {
+        #gardening, #cleaning {
+            background-size: 3em;
+            padding-left: 0;
+            padding-top: 2em;
+            background-position: top left;
+        }
+    }
+}
+
+
+// Contacts section (white)
+$icon-size: 1.9em;
+$icon-margin: 2.7em;
+
+#contact {
+    padding: 2em 0;
+    p {
+        font-size: 1.3em;
+        padding-top: 1.4em;
+        padding-right: 3.2em;
+    }
+    dl {
+        position: relative;
+        dt, dd {
+           padding-left: $icon-margin; 
+        }
+        dd {
+            margin-bottom: 1em;   
+        }
+        dt:before {
+            @include theme-color('background-color', 'accent-mid');
+            @include theme-color('color', 'primary-dark');
+        }
+        a {
+            @include theme-color('color', 'darkest');
+            &:hover, &:focus {
+                @include theme-color('color', 'accent-dark');
+            }
+        }
+        .icon-phone:before, .icon-email:before {
+            position: absolute;
+            left: 0;
+            margin-top: 0.3em;
+            display: inline-block;
+            width: $icon-size;
+            height: $icon-size;
+            line-height: $icon-size;
+            text-align: center;
+            border-radius: 100%;
+        }
+    }
+    @include breakpoint("small") {
+        padding: 1.5em 0;
+        .column {
+            width: 100%;
+            float: none;
+	    }   
+        p {
+            padding: 0em;  
+            margin: 1em 0;
+        }
+        dl {
+            padding-bottom: 0;   
+            text-align: left;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+// Footer section (black)
+$icon-size: 1.4em;
+$icon-margin: 0.4em;
+
+#primary-footer {
+    @include theme-color('background-color', 'subtle-dark');
+    @include theme-color('color', 'subtle-light');
+    width: 100%;
+    padding: 1.5em 0;
+    .container > * {
+        font-size: 0.9em;   
+    }
+    border-top: 0.25em solid black;
+    @include theme-color('border-color', 'accent-mid');
+}
+
+#footer-content {
+    a {
+        @include theme-color('color', 'subtle-light');
+        &:hover, &:focus {
+            @include theme-color('color', 'accent-mid');
+        }
+    }
+    ul {
+        li {
+            list-style-type: none;
+        }
+        li:before {
+            @include theme-color('color', 'accent-mid'); 
+            margin-top: 0.3em;
+            display: inline-block;
+            width: $icon-size;
+            height: $icon-size;
+            line-height: $icon-size;
+            text-align: center;
+            border-radius: 100%;
+            margin-right: $icon-margin;
+        }
+    }
+    header {
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 0.4em; 
+            line-height: 1em;
+            @extend %heading_normal;
+            span {
+                @extend %body_mid;   
+            }
+        }
+    }
+    p {
+        font-size: 0.9em;
+        line-height: 1.3em;
+    }
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+    
+    @include breakpoint("x-small") {
+        padding-top: 1em;
+        .column {
+            width: 100%;
+            float: none;
+        }
+        ul {
+            margin: 1em 0;   
+        }
+    }   
+    
+}

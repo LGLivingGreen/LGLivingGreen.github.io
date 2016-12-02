@@ -1,0 +1,57 @@
+// GENERAL LAYOUT
+
+* {
+	margin: 0;
+    @extend %body_normal;
+    padding: 0;
+    margin: 0;
+}
+ 
+html {
+    font-size: 1em;   
+}
+
+header, section {
+    position: relative;
+}
+
+// Primary (outer) containers
+.container {
+    @extend %primary_container;
+}
+
+#primary-container {
+	min-height: 100%;
+	margin-bottom: $footer_height;
+	margin-bottom: $size_l;
+    &:after {
+       @extend %clear_block;
+	   height: $footer_height; 
+    }
+}
+
+.highlight {
+    padding: $size_s;
+    ol, ul {
+        padding-left: 1.5em;   
+    }
+}
+
+@mixin vertical-padding($value) {
+    padding-top: $value;
+    padding-bottom: $value;
+}
+
+@mixin horizontal-padding($value) {
+    padding-left: $value;
+    padding-right: $value;
+}
+
+@each $label, $value in $standard_size_map {    
+    .vertical-padding-#{$label} {
+        @include vertical-padding($value);
+    }
+    .horizontal-padding-#{$label} {
+        @include horizontal-padding($value);
+    }
+}

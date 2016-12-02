@@ -1,0 +1,41 @@
+// VARIABLES
+
+// Layout sizes, relative (em)
+$footer_height: 3em;
+$max-page-width: 45em;
+
+// Layout sizes, standard (rem)
+$small_border: 0.5rem;
+
+
+// Standard sizes
+$sizes: smallest, xxs, xs, s, m, l, xl, xxl;
+$size_smallest: 0.1rem;
+$size_xxs: 0.25rem;
+$size_xs: 0.5rem;
+$size_s: 1rem;
+$size_m: 2rem;
+$size_l: 3rem;
+$size_xl: 4rem;
+$size_xxl: 5rem;
+$standard_size_map: (smallest: $size_smallest, xxs: $size_xxs, xs: $size_xs, s: $size_s, m: $size_m, l: $size_l, xl: $size_xl, xxl: $size_xxl);
+
+// Standard times
+$time_xxs: 0.05s;
+$time_xs: 0.1s;
+$time_s: 0.2s;
+$time_m: 0.3s;
+$time_l: 0.5s;
+$time_xl: 1s;
+$time_xxl: 2s;
+
+// z index values
+$z_bottom: 0;
+$z_xxs: 2;
+$z_xs: 4;
+$z_s: 6;
+$z_m: 8;
+$z_l: 10;
+$z_xl: 12;
+$z_xxl: 14;
+$z_top: 16;
