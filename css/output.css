@@ -1,0 +1,386 @@
+/* Compiled from SASS. Do not edit the CSS version. */
+@import "https://fonts.googleapis.com/css?family=Raleway:400,400i,500,700|Rock+Salt";
+#large-header header h1, #footer-content header h2 {
+  font-family: 'Rock Salt', sans-serif; }
+
+#topright ul li a, *, #large-header header p, #footer-content header h2 span, body dl dt, #large-header header h1 span {
+  font-family: 'Raleway', sans-serif; }
+
+#large-header header h1, #footer-content header h2 {
+  font-weight: 400; }
+  #large-header header h1 strong, #footer-content header h2 strong {
+    font-weight: 700; }
+
+#topright ul li a, * {
+  font-weight: 400; }
+  #topright ul li a strong, * strong {
+    font-weight: 700; }
+
+#large-header header p, #footer-content header h2 span {
+  font-weight: 500; }
+  #large-header header p strong, #footer-content header h2 span strong {
+    font-weight: 700; }
+
+body dl dt, #large-header header h1 span {
+  font-weight: 700; }
+
+/****** Page-wide settings ******/
+body {
+  background-color: #ffffff;
+  color: #262626; }
+  body a {
+    color: #c5de47; }
+    body a:hover, body a:focus {
+      color: #000; }
+  body dl {
+    padding: 1em 0; }
+    body dl dt {
+      font-size: 1em;
+      margin-top: 0.4em; }
+    body dl dd {
+      font-size: 1em;
+      padding-bottom: 0.4em; }
+  body .icon-phone:before {
+    content: "\f095";
+    font-family: FontAwesome; }
+  body .icon-email:before {
+    content: "\f003";
+    font-family: FontAwesome; }
+  body .column {
+    width: 50%;
+    float: left;
+    display: inline-block; }
+  @media (max-width: 50em) {
+    body .container {
+      padding: 0 2.5rem; } }
+
+/****** Section settings ******/
+#topright {
+  text-align: left;
+  position: static;
+  white-space: nowrap;
+  color: #fff; }
+  #topright ul {
+    min-width: 15em;
+    font-size: 0.9em;
+    background-color: #292a26;
+    opacity: 0.9;
+    padding: 0.5em 1.2em;
+    list-style-type: none;
+    width: auto;
+    position: absolute;
+    right: 0;
+    z-index: 1; }
+    #topright ul li {
+      line-height: 2em; }
+      #topright ul li a {
+        color: #fff;
+        text-decoration: none; }
+        #topright ul li a:hover, #topright ul li a:focus {
+          color: #c5de47;
+          text-decoration: underline; }
+      #topright ul li:before {
+        color: #fff;
+        float: left;
+        padding-right: 0.9em;
+        width: 1em;
+        text-align: center;
+        display: inline-block; }
+  @media (max-width: 37.5em) {
+    #topright.container {
+      padding: 0;
+      margin: 0;
+      max-width: none; }
+    #topright ul {
+      position: relative;
+      text-align: left; }
+      #topright ul li {
+        text-align: left;
+        margin: 0 auto; }
+        #topright ul li:before {
+          display: none; } }
+  @media (max-width: 37.5em) and (max-width: 50em) {
+    #topright ul {
+      padding: 1em 2.5rem; } }
+
+#primary-header .container {
+  padding: 0; }
+
+#banner {
+  background-image: url("../images/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+  @media (max-width: 37.5em) {
+    #banner {
+      padding: 4em 0; } }
+
+#large-header {
+  text-align: center;
+  padding: 0; }
+  #large-header header {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+    display: inline-block;
+    width: 15em;
+    height: 15em;
+    border-radius: 100%;
+    margin: 6em 0 3em;
+    padding: 1em; }
+    #large-header header h1 {
+      font-size: 1.6em;
+      margin-bottom: 0.4em; }
+      #large-header header h1 span {
+        font-size: 0.7em;
+        display: block;
+        margin: 2.2em 3em 0.5em;
+        border-bottom: 0.2em solid;
+        border-color: #c5de47;
+        line-height: 1.4em; }
+    #large-header header p {
+      line-height: 1.4em; }
+    @media (max-width: 37.5em) {
+      #large-header header {
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        margin: 0 0 0 0;
+        text-align: left;
+        padding: 1em 2.5rem 2em; }
+        #large-header header h1 {
+          line-height: 1em;
+          margin: 0.5em 0; }
+          #large-header header h1 span {
+            margin: 1em 0 0.5em;
+            max-width: none;
+            display: inline-block;
+            border: 0; } }
+
+#services {
+  background-color: #ebebeb; }
+  #services dt:before {
+    color: #262626; }
+  #services #gardening, #services #cleaning {
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 5.3em;
+    padding-left: 6.5em; }
+    #services #gardening dt, #services #cleaning dt {
+      font-size: 1.1em;
+      line-height: 1.8em; }
+    #services #gardening dd, #services #cleaning dd {
+      font-size: 0.9em; }
+  #services #gardening {
+    background-image: url(../images/watering-can.svg); }
+  #services #cleaning {
+    background-image: url(../images/cleaning-brush.svg); }
+  #services dl div {
+    margin-bottom: 1em; }
+    #services dl div:last-child {
+      margin-bottom: 0.5em; }
+  @media (max-width: 50em) {
+    #services #gardening, #services #cleaning {
+      background-size: 3em;
+      padding-left: 4em;
+      background-position: top left; } }
+  @media (max-width: 37.5em) {
+    #services #gardening, #services #cleaning {
+      background-size: 3em;
+      padding-left: 0;
+      padding-top: 2em;
+      background-position: top left; } }
+
+#contact {
+  padding: 2em 0; }
+  #contact p {
+    font-size: 1.3em;
+    padding-top: 1.4em;
+    padding-right: 3.2em; }
+  #contact dl {
+    position: relative; }
+    #contact dl dt, #contact dl dd {
+      padding-left: 2.7em; }
+    #contact dl dd {
+      margin-bottom: 1em; }
+    #contact dl dt:before {
+      background-color: #c5de47;
+      color: #262626; }
+    #contact dl a {
+      color: #000; }
+      #contact dl a:hover, #contact dl a:focus {
+        color: #70840b; }
+    #contact dl .icon-phone:before, #contact dl .icon-email:before {
+      position: absolute;
+      left: 0;
+      margin-top: 0.3em;
+      display: inline-block;
+      width: 1.9em;
+      height: 1.9em;
+      line-height: 1.9em;
+      text-align: center;
+      border-radius: 100%; }
+  @media (max-width: 50em) {
+    #contact {
+      padding: 1.5em 0; }
+      #contact .column {
+        width: 100%;
+        float: none; }
+      #contact p {
+        padding: 0em;
+        margin: 1em 0; }
+      #contact dl {
+        padding-bottom: 0;
+        text-align: left;
+        margin: 0 auto; } }
+
+#primary-footer {
+  background-color: #262626;
+  color: #ddd;
+  width: 100%;
+  padding: 1.5em 0;
+  border-top: 0.25em solid black;
+  border-color: #c5de47; }
+  #primary-footer .container > * {
+    font-size: 0.9em; }
+
+#footer-content a {
+  color: #ddd; }
+  #footer-content a:hover, #footer-content a:focus {
+    color: #c5de47; }
+#footer-content ul li {
+  list-style-type: none; }
+#footer-content ul li:before {
+  color: #c5de47;
+  margin-top: 0.3em;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.4em;
+  text-align: center;
+  border-radius: 100%;
+  margin-right: 0.4em; }
+#footer-content header h2 {
+  font-size: 1.2em;
+  margin-bottom: 0.4em;
+  line-height: 1em; }
+#footer-content p {
+  font-size: 0.9em;
+  line-height: 1.3em; }
+#footer-content:after {
+  display: block;
+  content: '';
+  clear: both; }
+@media (max-width: 37.5em) {
+  #footer-content {
+    padding-top: 1em; }
+    #footer-content .column {
+      width: 100%;
+      float: none; }
+    #footer-content ul {
+      margin: 1em 0; } }
+
+.container {
+  max-width: 45em;
+  padding: 0 1rem; }
+
+#primary-container:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.container {
+  margin: 0 auto;
+  display: block;
+  position: relative; }
+
+.clearfix {
+  clear: both; }
+
+* {
+  margin: 0;
+  padding: 0;
+  margin: 0; }
+
+html {
+  font-size: 1em; }
+
+header, section {
+  position: relative; }
+
+#primary-container {
+  min-height: 100%;
+  margin-bottom: 3em;
+  margin-bottom: 3rem; }
+  #primary-container:after {
+    height: 3em; }
+
+.highlight {
+  padding: 1rem; }
+  .highlight ol, .highlight ul {
+    padding-left: 1.5em; }
+
+.vertical-padding-smallest {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem; }
+
+.horizontal-padding-smallest {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem; }
+
+.vertical-padding-xxs {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem; }
+
+.horizontal-padding-xxs {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem; }
+
+.vertical-padding-xs {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; }
+
+.horizontal-padding-xs {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem; }
+
+.vertical-padding-s {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+.horizontal-padding-s {
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+.vertical-padding-m {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+
+.horizontal-padding-m {
+  padding-left: 2rem;
+  padding-right: 2rem; }
+
+.vertical-padding-l {
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
+
+.horizontal-padding-l {
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
+.vertical-padding-xl {
+  padding-top: 4rem;
+  padding-bottom: 4rem; }
+
+.horizontal-padding-xl {
+  padding-left: 4rem;
+  padding-right: 4rem; }
+
+.vertical-padding-xxl {
+  padding-top: 5rem;
+  padding-bottom: 5rem; }
+
+.horizontal-padding-xxl {
+  padding-left: 5rem;
+  padding-right: 5rem; }
+
+/*# sourceMappingURL=output.css.map */
